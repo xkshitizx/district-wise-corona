@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <form action="" method="post">
+        <select id="district" name="district">
+            {% if dis %}
+            <option value="{{ dis.id }}" selected>{{ dis.title }}</option>
+            {% else %}
+            <option value="disabled" disabled selected>District</option>
+            {% endif %}
+            {% for district in district_list %}
+            <option value="{{district.id}}">{{district.title}}</option>
+            {% endfor %}
+
+        </select>
+        <button id="btn" type="submit" disabled>Get Details</button>
+
+    </form>
+    {% if dis %}
+    Id: {{ dis.id }} <br>
+    Province: {{ dis.province }} <br>
+    District: {{ dis.title }} <br>
+    Number of cases: {{num}} <br>
+    {% endif %}
+
+</body>
+<script>
+    var dd = document.getElementById("district");
+    dd.addEventListener('change', function () {
+        document.querySelector("#btn").disabled = false;
+    })
+</script>
+
+</html>
