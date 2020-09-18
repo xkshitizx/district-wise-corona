@@ -27,3 +27,8 @@ def get_district_cases(district):
     r = requests.get(url.format(district)).json()
     num_of_cases =len(r['covid_cases'])
     return render_template('index.html',district=r,num=num_of_cases)
+
+
+
+if __name__ == "__main__":
+            app.run()
