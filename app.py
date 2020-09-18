@@ -21,14 +21,12 @@ def index():
     get_dist = requests.get('https://data.nepalcorona.info/api/v1/districts').json()
     return render_template('index.html',district_list=get_dist)
 
-@app.route('/get_district_cases')
-def get_district_cases(district):
-    url = "https://data.nepalcorona.info/api/v1/districts/{}"
-    r = requests.get(url.format(district)).json()
-    num_of_cases =len(r['covid_cases'])
-    return render_template('index.html',district=r,num=num_of_cases)
-
+@app.route('/news')
+def news():
+    url = "https://nepalcorona.info/api/v1/news"
+    news = requests.get(url).json()
+    return render_template('news.html',news=news)
 
 
 if __name__ == "__main__":
-            app.run()
+    app.run()
