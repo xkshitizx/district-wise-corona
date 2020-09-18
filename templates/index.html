@@ -31,6 +31,17 @@
     District: {{ dis.title }} <br>
     Number of cases: {{num}} <br>
     {% endif %}
+    <div id="daily_cases">
+        <h1>Nepal Covid Update</h1>
+        <h1>Date: {{daily_data['date']}} <br></h1>
+        New Cases: {{ daily_data['newCases']}} <br>
+        Recoveries: {{ daily_data['newRecoveries']}} <br>
+        Deaths: {{ daily_data['newDeaths']}}
+        <br><br>
+        Total Cases: {{ daily_data['totalCases'] }} <br>
+        Total Recoveries: {{ daily_data['totalRecoveries']}} <br>
+        Total Deaths: {{daily_data['totalDeaths']}} <br>
+    </div>
 
 </body>
 <script>
