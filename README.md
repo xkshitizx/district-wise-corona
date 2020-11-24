@@ -1,5 +1,5 @@
-# corona
-##corona-flask
+# Displays the district wise corona stats 
+
 
 ### To run it locally:
 *1. Clone 
